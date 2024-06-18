@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-xl-12 col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="SubmissionHeader">Submission</h1>
+        
+        <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Proposal</ng-template>
+              <div>
+                <label>Upload Proposal</label>
+                <input type="file" [formControlName]="fileControlName" (change)="onFileChange($event, 'fileControlName', firstFormGroup)">
+              </div>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Progress 1</ng-template>
+              <div>
+                <label>Upload file 1</label>
+                <input type="file" [formControlName]="fileControlName1" (change)="onFileChange($event, 'fileControlName1', secondFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 2</label>
+                <input type="file" [formControlName]="fileControlName2" (change)="onFileChange($event, 'fileControlName2', secondFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 3</label>
+                <input type="file" [formControlName]="fileControlName3" (change)="onFileChange($event, 'fileControlName3', secondFormGroup)">
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Progress 2</ng-template>
+              <div>
+                <label>Upload file 1</label>
+                <input type="file" [formControlName]="fileControlName1" (change)="onFileChange($event, 'fileControlName1', thirdFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 2</label>
+                <input type="file" [formControlName]="fileControlName2" (change)="onFileChange($event, 'fileControlName2', thirdFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 3</label>
+                <input type="file" [formControlName]="fileControlName3" (change)="onFileChange($event, 'fileControlName3', thirdFormGroup)">
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="forthFormGroup">
+            <form [formGroup]="forthFormGroup">
+              <ng-template matStepLabel>Final Submission</ng-template>
+              <div>
+                <label>Upload file 1</label>
+                <input type="file" [formControlName]="fileControlName1" (change)="onFileChange($event, 'fileControlName1', forthFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 2</label>
+                <input type="file" [formControlName]="fileControlName2" (change)="onFileChange($event, 'fileControlName2', forthFormGroup)">
+              </div>
+              <div>
+                <label>Upload file 3</label>
+                <input type="file" [formControlName]="fileControlName3" (change)="onFileChange($event, 'fileControlName3', forthFormGroup)">
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+      </div>
+    </div>
+  </div>
+</div>

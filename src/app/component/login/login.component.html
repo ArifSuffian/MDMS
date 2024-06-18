@@ -1,3 +1,55 @@
-<p>
-  login works!
-</p>
+<!-- <app-loader *ngIf="loadingPanelVisible"></app-loader> -->
+
+<div class="login-container">
+  <div class="logo">
+    <span>
+      <img src="../../../assets/images/logo.png" alt="logo"> 
+      <!-- ni tukar -->
+    </span>
+  </div>
+  <div class="login-panel">
+    <div class="login-box">
+      <div class="login-title">
+        MDMS
+      
+      </div>
+      <div class="login-form">
+
+        <form class="k-form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+          <fieldset class="k-form-fieldset">
+
+              <div class="field-group">
+                <div class="field">
+                  <input type="text" formControlName="username" name="username"
+                    placeholder="Enter your username" #username required />
+                </div>
+              </div>
+
+                <!-- buat error validation for username -->
+              <div class="field-group">
+                <div class="field">
+                  <input type="password" formControlName="password" placeholder="Enter your password"
+                    #password required />
+                </div>
+              </div>
+
+                <!-- buat error validation for password -->
+
+            <div class="k-form-buttons item-center">
+              <button class="btn btn-primary" style="width: 100%;">
+                <span>Login</span>
+              </button>
+            </div>
+          </fieldset>
+        <!-- </form> -->
+
+      <div>
+      <!-- <div class="row">
+        <div class="col-12 text-center">
+          <a routerLink="/password/request" routerLinkActive="active" href="#" class="active">
+            Reset password
+          </a>
+        </div>
+      </div> -->
+    </div>
+  
